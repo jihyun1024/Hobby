@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "description": "노무현이 주도하는 질서, 그것은 거역할 수 없어",
+    "name": "노무현이 주도하는 질서",
+    "version": "1.0.0",
+    "icons": {
+        "16": "shangus.png",
+        "32": "shangus.png",
+        "48": "shangus.png",
+        "128": "shangus.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["index.js"]
+        }
+    ]
+}
