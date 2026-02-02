@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "description": "Convert images to speaki",
+    "name": "image to speaki",
+    "version": "1.0.0",
+    "icons": {
+        "16": "speaki.png",
+        "32": "speaki.png",
+        "48": "speaki.png",
+        "128": "speaki.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["index.js"]
+        }
+    ]
+}
