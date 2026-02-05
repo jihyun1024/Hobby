@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+        <title>아스키 아트 제작</title>
+        <style>
+            pre {
+                font-family: Consolas, "Courier New", monospace;
+                font-size: 8px;
+                line-height: 8px;
+                white-space: pre;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" width="300" height="300" style="display:none;"></canvas>
+        <pre id="output"></pre>
+
+        <script>
+            const img = new Image();
+            img.src = 'speaki.png'; // 아스키 아트로 출력할 이미지의 이름
+
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            const output = document.getElementById('output');
+
+            // 이미지의 가로, 세로 픽셀 크기
+            const W = 300;
+            const H = 300;
+
+            // 어두움 → 밝음
+            const ascii = "@$#Y!=+~- ";
+
+            img.onload = () => {
+                ctx.drawImage(img, 0, 0, W, H);
+
+                // 전체 픽셀 한 번에 가져오기 (속도 최적화 가능)
+                const data = ctx.getImageData(0, 0, W, H).data;
+
+                let result = ""; // 결과를 저장할 빈 문자 배열
+                let i = 0; // data 배열의 인덱스
+        
+                // 반복문 증가값: 1로 설정하면 모든 픽셀 처리, 2 이상으로 설정하면 듬성듬성 처리
+                for (let y = 0; y < H; y++) {
+                    for (let x = 0; x < W; x++) {
+                        const r = data[i];
+                        const g = data[i + 1];
+                        const b = data[i + 2];
+                        const gray = 0.299 * r + 0.587 * g + 0.114 * b; // 회색조 변환 공식
+                        const idx = (gray * (ascii.length - 1) / 255) | 0; // ASCII 문자의 인덱스 계산
+
+                        result += ascii[idx];
+                        i += 4; // RGBA를 반영해 인덱스를 증가
+                    }
+                    result += "\n";
+                }
+
+                output.textContent = result;
+            };
+        </script>
+    </body>
+</html>
