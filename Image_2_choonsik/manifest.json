@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "description": "춘식이와 언제나 함께",
+    "name": "Choonsik",
+    "version": "1.0.0",
+    "icons": {
+        "16": "choonsik.png",
+        "32": "choonsik.png",
+        "48": "choonsik.png",
+        "128": "choonsik.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["index.js"]
+        }
+    ]
+}
