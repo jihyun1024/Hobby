@@ -5,6 +5,5 @@
 ---
 
 - ASCII: 특정 부분에 이미지의 메타데이터를 넣고 돌리면 아스키 아트를 출력하는 html 파일
-- Image_2_choonsik: 춘식이와 Chrome에서 함께 할 수 있다니!! (❁´◡`❁)
-- Image_2_shangus: 웹의 모든 이미지를 그분으로 보이게 하는 Chrome 확장프로그램
+- Image_2_choonsik: 춘식이와 언제나 함께!
 - Image_2_speaki: 웹의 모든 이미지를 스핔이로 보이게 하는 Chrome 확장프로그램
