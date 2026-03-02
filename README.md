@@ -7,3 +7,4 @@
 - ASCII: 특정 부분에 이미지의 메타데이터를 넣고 돌리면 아스키 아트를 출력하는 html 파일
 - Image_2_choonsik: 춘식이와 언제나 함께!
 - Image_2_speaki: 웹의 모든 이미지를 스핔이로 보이게 하는 Chrome 확장프로그램
+- Relaxing_creation: 가독성은 많이 떨어지지만, Pygame 라이브러리를 써서 커튼을 움직일 수 있게 하는 프로그램
